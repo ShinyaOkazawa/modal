@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+/**
+ *
+ *  サイト共通
+ *
+ */
+
+/*--------------------------------------------------------------------------
+   reset
+---------------------------------------------------------------------------*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,
+sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
+figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+img{border:0;vertical-align:top;}
+em{font-style:italic;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:0;padding:0;}
+input,select,textarea{font-family:inherit;font-style:inherit;font-weight:inherit;font-size:100%;margin:0;padding:0;vertical-align:middle;}
+input:focus,textarea:focus,select:focus{outline:none;}
+
+
+/*--------------------------------------------------------------------------
+   html
+---------------------------------------------------------------------------*/
+
+html{
+	overflow-y: scroll;
+}
+
+
+/*--------------------------------------------------------------------------
+   body
+---------------------------------------------------------------------------*/
+
+body{
+	/*min-width: 1024px;*/
+	color: #333;
+	font-family: '游ゴシック',YuGothic,'ヒラギノ角ゴ ProN W3',"Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+	font-size: 12px;
+	font-size: 75%\9;
+	line-height: 1.8;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
+  body{font-size:75%;}
+}
+
+/*
+::-moz-selection{
+	color:;
+	background:;
+}
+::selection{
+	color:;
+	background:;
+}
+*/
+
+
+/*--------------------------------------------------------------------------
+   base link
+---------------------------------------------------------------------------*/
+
+a{
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a:link,
+a:visited{
+	color:;
+	text-decoration:;
+}
+a:hover{
+	color:;
+	text-decoration:;
+	outline: none;
+}
+a:active{
+	outline: none;
+}
+
+
+/*--------------------------------------------------------------------------
+   Container
+---------------------------------------------------------------------------*/
+
+#Page{
+}
+
+
+/*--------------------------------------------------------------------------
+   Header
+---------------------------------------------------------------------------*/
+
+#Header{
+}
+#Header .inner{
+	position: relative;
+	width:;
+	margin: 0 auto;
+}
+
+/* ロゴ
+-----------------------------------------------------------------*/
+#Header .logo{
+	position: absolute;
+	top:;
+	left:;
+}
+
+/* ヘルプナビ
+-----------------------------------------------------------------*/
+#Header .nav-help{
+	overflow: hidden;
+	position: absolute;
+	top:;
+	right:;
+}
+#Header .nav-help li{
+	float: left;
+}
+
+/* グローバルナビ
+-----------------------------------------------------------------*/
+#Header .nav-global{
+	overflow: hidden;
+	position: absolute;
+	top:;
+	left:;
+}
+#Header .nav-global li{
+	float: left;
+}
+
+
+/*--------------------------------------------------------------------------
+   Footer
+---------------------------------------------------------------------------*/
+
+#Footer{
+}
+#Footer .inner{
+	position: relative;
+	width:;
+	margin: 0 auto;
+}
+
+/* ナビ
+-----------------------------------------------------------------*/
+#Footer .nav{
+}
+
+/* コピーライト
+-----------------------------------------------------------------*/
+#Footer .copyright{
+}
+#Footer .copyright small{
+}
+
+
+/*--------------------------------------------------------------------------
+   Content
+---------------------------------------------------------------------------*/
+
+#Content{
+}
+
+/* Main
+-----------------------------------------------------------------*/
+#Main{
+}
+
+/* Side
+-----------------------------------------------------------------*/
+#Side{
+}
+
+/* ナビ */
+#Side .nav-side{
+}
+#Side .nav-side dt{
+}
+#Side .nav-side ul{
+}
+#Side .nav-side ul li{
+}
+
+/* バナー */
+#Side .bnr-list{
+}
+#Side .bnr-list li{
+}
+
+/* パンくずリスト
+-----------------------------------------------------------------*/
+#bread-crumb{
+}
+#bread-crumb ul{
+	overflow: hidden;
+}
+#bread-crumb ul li{
+	float: left;
+	margin-right: 10px;
+	padding-left: 20px;
+	background: url(/shared/images/ico_breadcrumb.png) no-repeat 0 50%;
+}
+#bread-crumb ul li:first-child{
+	background: none;
+	padding-left: 0;
+}
+
+
+/*--------------------------------------------------------------------------
+   Other
+---------------------------------------------------------------------------*/
+
+/* clearfix
+-----------------------------------------------------------------*/
+.cf:before,
+.cf:after{
+	content: "";
+	display: table;
+}
+.cf:after{
+	clear: both;
+}
+.cf{
+	zoom: 1;
+}
+
+/* box-model
+-----------------------------------------------------------------*/
+/*
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*/
+
+
