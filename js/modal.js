@@ -63,8 +63,8 @@
 				});
 				param.$obj.contentWrap.css({
 					'position': 'fixed',
-					'top': func.getCenterContentWrap('top',setting.height),
-					'left': func.getCenterContentWrap('left',setting.width),
+					'top': func.getCenterY,
+					'left': func.getCenterX,
 					'z-index' : 1002,
 					'width': setting.width,
 					'height': setting.height,
@@ -97,49 +97,63 @@
 				});
 			},
 
-			getCenterContentWrap: function(dir,val){
+			getCenterX: function(){
 
-				var tmp = 0;
-				var isPx,isPercent,wPercent,hPercent;
+				var val = 0;
+				var w = setting.width;
+				var ww = window.innerWidth;
 
-				if(isFinite(val)){ // 数値のみの場合
-
-					if(dir == 'top'){
-						val = window.innerHeight/2 - val/2;
-					} else if(dir == 'left'){
-						val = window.innerWidth/2 - val/2;
-					}
-
-				} else { // 数値以外の場合
-
-					isPx = val.match(/px/);
-					isPercent = val.match(/\%/);
-					val = val.match(/\d*/).join('');
-
-					if(isPx){ // px指定の場合
-
-						if(dir == 'top'){
-							val = window.innerHeight/2 - val/2;
-						} else if(dir == 'left'){
-							val = window.innerWidth/2 - val/2;
-						}
-
-					} else if(isPercent){ // %指定の場合
-
-						wPercent = window.innerWidth * (val / 100);
-						hPercent = window.innerHeight * (val / 100);
-						console.log(wPercent);
-						if(dir == 'top'){
-							val = window.innerHeight/2 - hPercent/2;
-						} else if(dir == 'left'){
-							val = window.innerWidth/2 - wPercent/2;
-						}
-
-					}
-
+				if(isFinite(w)){ // 数値のみの場合
+					val = ww/2 - w/2;
+				} else if(func.isPx(w)){ // px指定の場合
+					w = func.removeUnit(w);
+					val = ww/2 - w/2;
+				} else if(func.isPercent(w)){ // %指定の場合
+					w = ww * func.removeUnit(w);
+					val = ww/2 - w/2;
 				}
-				console.log(val);
+
 				return val;
+			},
+
+			getCenterY: function(){
+
+				var val = 0;
+				var h = setting.height;
+				var wh = window.innerHeight;
+
+				if(isFinite(h)){ // 数値のみの場合
+					val = wh/2 - h/2;
+				} else if(func.isPx(h)){ // px指定の場合
+					h = func.removeUnit(h);
+					val = wh/2 - h/2;
+				} else if(func.isPercent(h)){ // %指定の場合
+					h = wh * func.removeUnit(h);
+					val = wh/2 - h/2;
+				}
+
+				return val;
+			},
+
+			isPx: function(val){
+				return val.match(/px/);
+			},
+
+			isPercent: function(val){
+				return val.match(/\%/);
+			},
+
+			removeUnit: function(val){
+
+				if(func.isPx(val)){
+					val = val.match(/\d*/).join('');
+				} else if(func.isPercent(val)){
+					val = val.match(/\d*/).join('');
+					val = val/100;
+				}
+
+				return val;
+
 			},
 
 			open: function(){
