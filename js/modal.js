@@ -94,6 +94,9 @@
 					 'width' : ww,
 					 'height' : scrH
 					});
+					param.$obj.contentWrap.css({
+					 'left' : func.getCenterX
+					});
 				});
 			},
 
