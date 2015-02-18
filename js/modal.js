@@ -80,7 +80,9 @@
 			},
 
 			resizeWindow: function(){
+
 				$(window).on('resize scroll', function(){
+					console.log(1);
 					var ww = window.innerWidth;
 					var wh = window.innerHeight;
 					var scr = $(window).scrollTop();
@@ -90,9 +92,16 @@
 					if(scrH>limit){
 						return false;
 					}
+
+					// オーバレイ
 					param.$obj.overlay.css({
 					 'width' : ww,
 					 'height' : scrH
+					});
+
+					// 内容
+					param.$obj.contentWrap.css({
+						'left' : func.getCenterX
 					});
 				});
 			},
